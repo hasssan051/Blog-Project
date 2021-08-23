@@ -21,7 +21,7 @@ app.get('/editor', (req, res)=>{
 
 //upload link
 app.post('/upload',(req,res)=> {
-    let file= req.file.image;
+    let file= req.files.image;
     let date= new Date();
     //image name
     let imageName = date.getDate() +date.getTime() + file.name;
@@ -33,9 +33,16 @@ app.post('/upload',(req,res)=> {
             throw err;
         }else {
             //image's upload path 
-            res.json(`uploads/${imagename}`);
+            res.json(`uploads/${imageName}`);
         }
     })
+})
+app.get('/:blog', (req, res)=>{
+    res.sendFile(path.join(initial_path,'blog.html'));
+})
+
+app.use((req,res)=>{
+    res.json("404");
 })
 
 app.listen("3000", () => {
