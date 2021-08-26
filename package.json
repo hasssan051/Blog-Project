@@ -4,7 +4,8 @@
   "description": "For Internship",
   "main": "server.js",
   "scripts": {
-    "start":"nodemon server.js"
+    "start": "nodemon server.js",
+    "compile": "node-sass sass/main.scss css/style.css -w"
   },
   "keywords": [
     "Blogging",
@@ -16,8 +17,14 @@
   "author": "Hassan Zaidi",
   "license": "ISC",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "autoprefixer": "^10.3.2",
+    "bootstrap": "^5.1.0",
     "express-fileupload": "^1.2.1",
     "express.js": "^1.0.0",
     "nodemon": "^2.0.12"
+  },
+  "devDependencies": {
+    "sass": "^1.38.1"
   }
 }

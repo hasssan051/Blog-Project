@@ -8,45 +8,155 @@
     <title>Blog: Homepage</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,600&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 
 <body>
-    <nav class="navbar">
-        <img src="#" class="logo" alt="">
-        <ul class="links-container">
-            <li class="link-item"><a href="/" class="link">Home</a></li>
-            <li class="link-item"><a href="/editor.html" class="link">Editor</a></li>
-        </ul>
-    </nav>
-
+    <div class="navbar-container">
+        <h1 class="logo">SoftwareQ</h1>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Website</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+        </label>
+    </div>
     <header class="header">
-        <div class="content">
-            <h1 class="heading">
-                <span class="small">welcome to the world of</span>
-                blog
-                <span class="no-fill">writing</span>
-            </h1>
+        <div class="header__logo-box">
         </div>
+
+        <div class="header__text-box">
+            <h1 class="heading-primary">
+                <span class="heading-primary--main">SoftwareQ</span>
+                <span class="heading-primary--sub">Learn to do more</span>
+            </h1>
+
+            <a href="#" class="btn btn--white btn--animated">Discover what we do</a>
+        </div>
+
+
     </header>
 
-    <section class="blog-section">
-        <!-- <div class="blog-card">
-            <img src="img/header2.png" class="blog-image" alt="">
-            <h1 class="blog-title">Lorem ipsum dolor sit amet consectetur.</h1>
-            <p class="blog-overview">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id animi ducimus nostrum, accusantium asperiores tenetur velit ipsum quos fugit, earum odio ea provident magni labore a porro sapiente obcaecati dolor?</p>
-            <a href="/" class="btn dark">read</a>
-        </div> -->
-    </section>
 
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <div class="content">
+        <h1 class="article-heading">Check out what we've got going!</h1>
+        <div class="band">
+            <div class="item-1">
+                <a href="#" class="card">
+                    <div class="thumb"
+                        style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/flex-1.jpg);">
+                    </div>
+                    <article>
+                        <h1></h1>
+                        <span></span>
+                    </article>
+                </a>
+            </div>
 
-    <script src="js/firebase.js"></script>
-    <script src="js/home.js"></script>
+        </div>
+        <a href="#" class="btn-dark">Load More</a>
+        <h1 class="article-heading">Blog Categories</h1>
+        <div class="categories-section">
+            <section class="hero-section">
+                <div class="card-grid">
+                    <a class="category_cards" href="#">
+                        <div class="card__background"
+                            style="background-image: url(https://images.unsplash.com/photo-1557177324-56c542165309?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)">
+                        </div>
+                        <div class="card__content">
+                            <p class="card__category">Software</p>
+                            <h3 class="card__heading">Everything about software</h3>
+                        </div>
+                    </a>
+                    <a class="category_cards" href="#">
+                        <div class="card__background"
+                            style="background-image: url(https://images.unsplash.com/photo-1557187666-4fd70cf76254?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)">
+                        </div>
+                        <div class="card__content">
+                            <p class="card__category">Coding</p>
+                            <h3 class="card__heading">Everything about coding</h3>
+                        </div>
+                    </a>
+                    <a class="category_cards" href="#">
+                        <div class="card__background"
+                            style="background-image: url(https://images.unsplash.com/photo-1556680262-9990363a3e6d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)">
+                        </div>
+                        <div class="card__content">
+                            <p class="card__category">Tech</p>
+                            <h3 class="card__heading">Everything about tech</h3>
+                        </div>
+                        </li>
+                        <a class="category_cards" href="#">
+                            <div class="card__background"
+                                style="background-image: url(https://images.unsplash.com/photo-1557004396-66e4174d7bf6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)">
+                            </div>
+                            <div class="card__content">
+                                <p class="card__category">SoftwareQ</p>
+                                <h3 class="card__heading">Everything about us</h3>
+                            </div>
+                        </a>
+                        <div>
+            </section>
+        </div>
 
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col">
+                        <h4>company</h4>
+                        <ul>
+                            <li><a href="#">about us</a></li>
+                            <li><a href="#">our services</a></li>
+                            <li><a href="#">privacy policy</a></li>
+                            <li><a href="#">affiliate program</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>get help</h4>
+                        <ul>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">pricing</a></li>
+                            <li><a href="#">Terms and conditions</a></li>
+                            <li><a href="#">Disclaimer</a></li>
+                            <li><a href="#">payment options</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Blog</h4>
+                        <ul>
+                            <li><a href="#">technology</a></li>
+                            <li><a href="#">software</a></li>
+                            <li><a href="#">coding</a></li>
+                            <li><a href="#">softaware as a service</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>follow us</h4>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 
+        <script src="js/firebase.js"></script>
+        <script src="js/home.js"></script>
 
 </body>
 
