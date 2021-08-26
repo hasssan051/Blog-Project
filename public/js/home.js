@@ -20,7 +20,6 @@ db.collection('blogs').get().then((blogs) => {
     </div>
     `;
 }*/
-console.log("Lets see if this works");
 
 
 
@@ -44,7 +43,7 @@ const createBlogFromAPI = (blog) => {
 
     blogSection.innerHTML += `
     <div class="item-2">
-    <a href="#" class="card">
+    <a href="/${blog.id}" class="card">
         <div class="thumb"
              style="background-image: url(${blog.linkToHeaderImage});">
         </div>

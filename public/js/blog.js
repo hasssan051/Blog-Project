@@ -1,32 +1,43 @@
-let blogId = decodeURI(location.pathname.split("/").pop()); /*This gives us the Id of the blog*/
+let blogId = decodeURI(location.pathname.split("/").pop());
+apiSingleCall(blogId);
 
-let docRef = db.collection("blogs").doc(blogId); /*To get our specific blog*/
 
-docRef.get().then((doc) => {
+
+/*let docRef = db.collection("blogs").doc(blogId); /*To get our specific blog*/
+
+/*docRef.get().then((doc) => {
     if (doc.exists) {
         setupBlog(doc.data());
     } else {
         location.replace("/");
     }
-})
+})*/
 
 const setupBlog = (data) => {
-    const banner = document.querySelector('.banner');
-    const blogTitle = document.querySelector('.title');
-    const titleTag = document.querySelector('title');
-    const publish = document.querySelector('.published');
+    
+    const header = document.querySelector('.banner');
+    const blogTitle = document.querySelector('.title-blog');
+    const author = document.querySelector('.name');
+    
+    const publish = document.querySelector('.date');
 
-    banner.style.backgroundImage = `url(${data.bannerImage})`;
+    header.style.backgroundImage = `url(${data.linkToHeaderImage})`;
 
-    titleTag.innerHTML += blogTitle.innerHTML = data.title;
-    publish.innerHTML += data.publishedAt;
+    let date = new Date(data.createdAtDateTimeOffset);
+    console.log(`${date.getDay()}-${date.toLocaleString('default', { month: 'short' })}-${date.getFullYear()}`);
 
-    const article = document.querySelector('.article');
-    addArticle(article, data.article);
+    blogTitle.innerHTML=data.title;
+    
+    publish.innerHTML += `${date.getDay()}-${date.toLocaleString('default', { month: 'short' })}-${date.getFullYear()}`;
+    author.innerHTML += data.author;
+
+    const article = document.querySelector('.article-here');
+    article.innerHTML=`${data.content}`
+    
 }
 const addArticle = (ele, data) => {
     data = data.split("\n").filter(item => item.length);
-    // console.log(data);
+
 
     data.forEach(item => {
         // check for heading
@@ -63,3 +74,10 @@ const addArticle = (ele, data) => {
     })
 }
 
+async function apiSingleCall(id) {
+    const api_url = `https://softwareq-merdeka-api.azure-api.net/blog/v1/ById?id=${id}&softwareq-apim-subscription-key=aae3f575fb204368b5b9e049fb09eb3e`
+    const response = await fetch(api_url);
+    const blogData = await response.json();
+    console.log(blogData);
+    setupBlog(blogData);
+}
