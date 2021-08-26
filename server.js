@@ -19,20 +19,19 @@ app.get('/editor', (req, res)=>{
     res.sendFile(path.join(initial_path,'editor.html'));
 })
 
-//upload link
+
 app.post('/upload',(req,res)=> {
     let file= req.files.image;
     let date= new Date();
-    //image name
     let imageName = date.getDate() +date.getTime() + file.name;
-    //path upload for image
+    
     let path='public/uploads/'+imageName;
-    //create the upload 
+   
     file.mv(path, (err, result)=> {
         if(err){
             throw err;
         }else {
-            //image's upload path 
+            
             res.json(`uploads/${imageName}`);
         }
     })

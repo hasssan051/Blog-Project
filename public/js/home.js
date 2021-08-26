@@ -72,48 +72,4 @@ const createBlogFromAPI = (blog) => {
     `;
 }
 
-/*const createBlogFromAPI = (blog) => {
-    let date = new Date(blog.createdAtDateTimeOffset);
-
-    //document.getElementById("card").style.backgroundImage = `url(${blog.linkToHeaderImage})`;
-
-    blogSection.innerHTML += `
-    <div class="blog-card">
-        <a href="https://google.com" class="card">
-            <div class="inner">
-             <h2 class="title">${(() => {
-            if (blog.title.length > 100) {
-                return `${blog.title.substring(0, 100) + '...'}`;
-            } else {
-                return `${blog.title}`;
-            }
-        })()}</h2>
-            <time class="subtitle">${date.getDay()}-${date.toLocaleString('default', { month: 'short' })}-${date.getFullYear()}<time>
-            <span class='subtitle'></span>
-            </div>
-        </a>
-        <!--<a href="/${blog.id}" class="btn dark">read</a>-->
-    </div>
-    `;
-}
-
-const createBlogFromAPI = (blog) => {
-    let date = new Date(blog.createdAtDateTimeOffset);
-    blogSection.innerHTML += `
-    <div class="blog-card">
-        <img src="${blog.linkToHeaderImage}" class="blog-image" alt="">
-        <h1 class="blog-title">${(() => {
-            if (blog.title.length > 100) {
-                return `${blog.title.substring(0, 100) + '...'}`;
-            } else {
-                return `${blog.title}`;
-            }
-        })()}</h1>
-        <span class="blog-date">${date.getDay()}-${date.toLocaleString('default', { month: 'short' })}-${date.getFullYear()}</span> 
-        <h4 class="blog-author">by:${blog.mainAuthor}</h4>
-        <p class="blog-overview">${blog.content.substring(0, 200) + '...'}</p>
-        <a href="/${blog.id}" class="btn dark">read</a>
-    </div>
-    `;
-}*/
 apiCall();
