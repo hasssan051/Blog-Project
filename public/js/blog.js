@@ -1,4 +1,5 @@
 let blogId = decodeURI(location.pathname.split("/").pop());
+
 apiSingleCall(blogId);
 
 

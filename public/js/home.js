@@ -28,7 +28,8 @@ const apiCall = async () => {
     const response = await fetch(api_url);
     const apiData = await response.json();
     apiData.forEach(blog => {
-        if (blog.isPublished) {
+        
+        if (blog.isPublished && blog.id != decodeURI(location.pathname.split("/").pop())) {
             createBlogFromAPI(blog);
         } else {
 
