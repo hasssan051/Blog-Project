@@ -1,5 +1,6 @@
 const blogSection = document.querySelector('.band');
 
+
 db.collection('blogs').get().then((blogs) => {
     blogs.forEach(blog => {
         if (blog.id != decodeURI(location.pathname.split("/").pop())) {
@@ -28,7 +29,6 @@ const apiCall = async () => {
     const response = await fetch(api_url);
     const apiData = await response.json();
     apiData.forEach(blog => {
-        
         if (blog.isPublished && blog.id != decodeURI(location.pathname.split("/").pop())) {
             createBlogFromAPI(blog);
         } else {

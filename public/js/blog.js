@@ -3,7 +3,7 @@ let blogId = decodeURI(location.pathname.split("/").pop());
 apiSingleCall(blogId);
 
 
-
+// If there is a need to get the articles from the database
 /*let docRef = db.collection("blogs").doc(blogId); /*To get our specific blog*/
 
 /*docRef.get().then((doc) => {
